@@ -1,3 +1,6 @@
+# THIS README IS UNDER CONFIGURATION
+## soon i will deploy this project on a host
+
 ![Portfolio Social Preview](./public/og.png)
 
 <p align="center">
