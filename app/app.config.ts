@@ -1,26 +1,24 @@
 export default defineAppConfig({
   global: {
-    meetingLink: 'https://cal.com/hugorcd/15min',
-    available: true,
+    meetingLink: '/contact',
+    available: false
   },
   profile: {
-    name: 'Hugo Richard',
-    job: 'Frontend Architect and Designer',
-    email: 'contact@hrcd.fr',
-    phone: '(+33) 6 21 56 22 18',
-    picture: 'https://avatars.githubusercontent.com/u/71938701?v=4',
+    name: 'Mohammad Hossein Ghofran',
+    job: 'Backend developer',
+    email: 'mhg4660@gmail.com',
+    phone: '(+989)933409540',
+    picture: 'https://avatars.githubusercontent.com/u/120258023?v=4',
   },
   socials: {
-    github: 'https://github.com/HugoRCD',
-    twitter: 'https://twitter.com/HugoRCD__',
-    linkedin: 'https://www.linkedin.com/in/hugo-richard-0801',
-    instagram: 'https://www.instagram.com/hugo.rcd_',
-    spotify: 'https://open.spotify.com/user/yuvl0zpp3bpx4hne1ag7huten?si=df7ee2777c0c4fc4',
+    github: 'https://github.com/Ghofran565',
+    discord: 'https://discord.gg/9ngaRvjGBp',
+    telegram: 'https://t.me/@ghofran565',
   },
   seo: {
-    title: 'Canvas a Nuxt portfolio template',
-    description: 'Canvas is a simple but beautiful portfolio template for designers and developers built with Nuxt and Tailwind CSS. Made with ❤️ by HugoRCD',
-    url: 'https://canvas.hrcd.fr',
+    title: 'Mohammad Hossein Ghofran | About me',
+    description: 'This is a simple About me website just for me and i have got nothing else to say',
+    url: 'https://ghofran.armatzone.com',
   },
   ui: {
     colors: {

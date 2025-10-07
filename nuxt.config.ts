@@ -26,7 +26,7 @@ export default defineNuxtConfig({
   css: ['~/assets/style/main.css'],
 
   site: {
-    url: 'https://canvas.hrcd.fr',
+    url: 'https://ghofran.armatzone.com',
     defaultLocale: 'en',
     indexable: true,
   },
@@ -77,7 +77,7 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: false,
       crawlLinks: true,
-      routes: ['/en', '/fr'],
+      routes: ['/en', '/fa'],
     },
   },
 
@@ -96,7 +96,7 @@ export default defineNuxtConfig({
   i18n: {
     locales: [
       { code: 'en', name: 'English', language: 'en-US' },
-      { code: 'fr', name: 'French', language: 'fr-FR' },
+      { code: 'fa', name: 'Farsi', language: 'fa-IR' },
     ],
     detectBrowserLanguage: {
       useCookie: true,

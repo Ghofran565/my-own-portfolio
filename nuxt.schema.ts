@@ -12,7 +12,7 @@ export default defineNuxtSchema({
           title: 'Meeting link',
           description: 'Your meeting link.',
           icon: 'lucide:calendar',
-          default: 'https://schedule.rdv.fr',
+          default: 'https://ghofran.armatzone.com',
         }),
         available: field({
           type: 'boolean',
