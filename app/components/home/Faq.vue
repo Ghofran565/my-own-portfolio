@@ -81,28 +81,47 @@ interface DiscordData {
   spotify: SpotifyData | null
 }
 
-// Fetch Discord data
-const { data: discordData, error: discordError } = await useFetch<{ data: DiscordData; success: boolean }>(
-  'https://api.lanyard.rest/v1/users/1298823045959647254',
-  {
-    server: true,
-    watch: false,
-    default: () => ({
-      data: {
-        discord_user: { id: '', username: '', global_name: '', display_name: '', avatar: '' },
-        activities: [],
-        discord_status: 'offline',
-        active_on_discord_web: false,
-        active_on_discord_desktop: false,
-        active_on_discord_mobile: false,
-        active_on_discord_embedded: false,
-        listening_to_spotify: false,
-        spotify: null,
-      },
-      success: false,
-    }),
+// Fetch Discord data on client-side with periodic refresh
+const discordData = ref<{ data: DiscordData; success: boolean }>({
+  data: {
+    discord_user: { id: '', username: '', global_name: '', display_name: '', avatar: '' },
+    activities: [],
+    discord_status: 'offline',
+    active_on_discord_web: false,
+    active_on_discord_desktop: false,
+    active_on_discord_mobile: false,
+    active_on_discord_embedded: false,
+    listening_to_spotify: false,
+    spotify: null,
+  },
+  success: false,
+})
+
+const discordError = ref(null)
+
+const fetchDiscordData = async () => {
+  try {
+    const response = await $fetch<{ data: DiscordData; success: boolean }>(
+      'https://api.lanyard.rest/v1/users/1298823045959647254',
+      {
+        method: 'GET',
+      }
+    )
+    discordData.value = response
+    discordError.value = null
+  } catch (err) {
+    discordError.value = err
   }
-)
+}
+
+// Run fetch on client-side mount and every 10 seconds
+onMounted(() => {
+  if (process.client) {
+    fetchDiscordData() // Initial fetch
+    const interval = setInterval(fetchDiscordData, 10000) // Refresh every 10 seconds
+    onUnmounted(() => clearInterval(interval)) // Cleanup on component unmount
+  }
+})
 
 // Discord Computed properties for status and activities
 const statusConfig = computed(() => {

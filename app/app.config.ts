@@ -1,6 +1,6 @@
 export default defineAppConfig({
   global: {
-    meetingLink: '/contact',
+    meetingLink: '/fa/contact',
     available: false
   },
   profile: {
